@@ -1,32 +1,44 @@
 # SOS de Emergência Android — SOS Toque
 
-Repositório de desenvolvimento da Enterprise, de Bobby Dias e Andrew Vox.
+**SOS Toque** é um aplicativo Android de código aberto criado para facilitar o acionamento de uma chamada telefônica a um contato de confiança, inclusive quando a tela está apagada e bloqueada. A proposta é oferecer uma alternativa de acesso para situações em que pressionar o botão lateral ou navegar pelo telefone seja difícil, por exemplo por limitações de mobilidade.
 
-**Escopo:** aplicativo aberto destinado a dispositivos Android compatíveis, não exclusivo de um fabricante, modelo ou aparelho pessoal. A versão 1.0.0 exige Android 8.0 (API 26) ou superior; o acionamento com tela apagada requer sensor de proximidade utilizável e permissões de execução em segundo plano. O aparelho que aparece nos registros é apenas como referência de validação física ainda pendente, e não como público-alvo exclusivo.
+O projeto é destinado ao público em geral, em **aparelhos Android compatíveis de qualquer fabricante**. Não é exclusivo de um modelo, pessoa ou dispositivo.
 
-O código-fonte recuperado da versão **SOS Toque 1.0.0** está em [`sos-toque/`](sos-toque/). Inclui o aplicativo Java para Android, manifest, recursos, lógica de gestos, documentação, testes e script de compilação. O pacote original foi recuperado sem chave de assinatura ou dados pessoais.
+> **Aviso importante — projeto em desenvolvimento:** o aplicativo **não substitui os serviços oficiais de emergência, o SOS nativo do Android nem outros meios de pedir ajuda**. O funcionamento de sensores, serviços em segundo plano e chamadas varia conforme o aparelho e a versão do sistema. A lógica foi testada, mas o fluxo completo de emergência **ainda não foi validado em aparelhos físicos** nesta publicação. Não dependa deste aplicativo como único recurso de segurança. A distribuição de um APK ocorrerá após os testes necessários.
 
-## Como o acionamento funciona
+## O que o aplicativo oferece
 
-O modo com **tela apagada e bloqueada** exige cinco ciclos de cobrir e descobrir o **sensor de proximidade superior**, seguidos de cinco segundos para cancelar a chamada. Isso **não** equivale a cinco toques capacitivos na tela apagada. A aplicação foi concebida para solicitar chamada a um contato pessoal previamente configurado, sem substituir o SOS nativo do Android.
+- **Acionamento com tela apagada e bloqueada:** cinco movimentos de cobrir e descobrir o sensor de proximidade superior. Não são toques na tela desligada.
+- **Confirmação antes da chamada:** após reconhecer os cinco gestos, uma contagem de cinco segundos permite cancelar um acionamento involuntário.
+- **Contato principal configurável:** o aplicativo solicita ao Android uma ligação telefônica para um número pessoal previamente escolhido.
+- **Teste sem ligação:** permite conferir o reconhecimento do sensor antes de habilitar o modo de chamadas.
+- **Outras formas de acesso:** botão flutuante e área SOS na tela acesa, além de contatos de reserva para seleção manual.
+- **Privacidade:** o código não solicita acesso à internet, localização, microfone ou SMS; não inclui anúncios, contas ou telemetria. Os contatos configurados ficam no armazenamento privado do aplicativo.
 
-## Estado de validação
+**Importante:** solicitar uma chamada ao Android não garante que ela será completada. Rede móvel, permissões, chip, políticas de bateria e hardware interferem no resultado. Para números curtos de serviços de emergência, o sistema pode exigir o uso e a confirmação no discador.
 
-- **37 verificações locais aprovadas** em 22/11/2026 para as classes `Numbers`, `TapSequence` e `ProximitySequence`, executadas com Java 17, sem chamadas telefônicas.
-- O registro original de QA informa compilação e assinatura prévias, mas **não comprova funcionamento físico** no estado atual de desenvolvimento.
-- **Sem teste de integração Android executado nesta importação**.
-- Antes de depender do programa, consultar [`VALIDACAO.md`](sos-toque/VALIDACAO.md) e testar com segurança no aparelho real e com um contato avisado. Distribuiremos assim que todos os testes forem concluídos.
+## Compatibilidade
 
-## Compilação e documentação
+A versão 1.0.0 requer **Android 8.0 (API 26) ou superior**. O modo de tela apagada depende de sensor de proximidade disponível e funcional, permissões adequadas e possibilidade de manter o serviço em execução. O aplicativo não exige root e não substitui o discador padrão.
 
-Leia [`README.md`](sos-toque/README.md), [`CONTINUIDADE.md`](sos-toque/CONTINUIDADE.md) e [`VALIDACAO.md`](sos-toque/VALIDACAO.md). O projeto original utiliza Android SDK Platform 35, Build Tools 35.0.0, Eclipse ECJ 3.37.0 e Java 17, com compilação por `bash sos-toque/build.sh`.
+A compatibilidade nominal com uma versão do Android não significa validação prática em todos os modelos.
 
-Teste isolado da lógica, sem SDK Android:
+## Estado atual do projeto
 
-```bash
-mkdir -p /tmp/sostoque-test
-javac -encoding UTF-8 -d /tmp/sostoque-test \
-  sos-toque/app/src/main/java/org/enterprise/sostoque/{Numbers,TapSequence,ProximitySequence}.java \
-  sos-toque/tests/CoreTests.java
-java -cp /tmp/sostoque-test org.enterprise.sostoque.CoreTests
-```
+O código-fonte da versão **SOS Toque 1.0.0** está publicado em [`sos-toque/`](sos-toque/), incluindo aplicativo Java, recursos Android, lógica dos gestos, testes, documentação e script de compilação.
+
+- **37 verificações locais de lógica aprovadas** em 22/11/2026, sem realizar chamadas.
+- A documentação do projeto original registra compilação e assinatura anteriores, mas a importação para este repositório **não incluiu testes físicos de integração**.
+- Ainda não há uma versão distribuída aqui como aplicativo validado para uso em emergências.
+
+Consulte [a documentação técnica](sos-toque/README.md) e [os critérios de validação](sos-toque/VALIDACAO.md) para detalhes e limitações. A orientação é testar cada aparelho em condições controladas, com o contato previamente avisado, mantendo disponíveis os recursos nativos de emergência.
+
+## Código-fonte e desenvolvimento
+
+O código foi recuperado do pacote original `SOS-Toque-1.0.0-fontes.zip`, verificado pelo SHA-256 `df3055555e6227116f29d33a67f1570479228641aaf7f5ca40ce47ddf023242f`. Nenhuma chave de assinatura ou contato pessoal foi importado.
+
+Para compilar, são utilizados Java 17, Android SDK Platform 35, Build Tools 35.0.0 e Eclipse ECJ 3.37.0; veja [as instruções de compilação](sos-toque/README.md). Há também [um documento de continuidade técnica](sos-toque/CONTINUIDADE.md).
+
+**Licenciamento:** os fontes da aplicação em `sos-toque/` trazem licença MIT; o arquivo `LICENSE` na raiz deste repositório permanece CC0 1.0. Consulte os arquivos de licença aplicáveis antes de redistribuir.
+
+Projeto desenvolvido por **Bobby Dias e Andrew Vox**, no âmbito da **Enterprise**.
