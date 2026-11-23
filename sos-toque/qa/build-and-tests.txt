@@ -1,0 +1,18 @@
+PASS: 37 checks. No telephony or real contacts used.
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=SOS Toque, OU=Personal Open Source, O=Enterprise
+Signer #1 certificate SHA-256 digest: de06c7063e56e05aca4a98e6898c521279216e25e27ad86fcfec4c60490d80ab
+Signer #1 certificate SHA-1 digest: c5512b53d989786a8476b7756077fb84bdae28e5
+Signer #1 certificate MD5 digest: 7ad6452cf4f3902a7ee600e4e90e3fbe
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 6b02882c2fb26c10ac081bf611cb1c3733394a4977670258bc8cec094534f32b
+Signer #1 public key SHA-1 digest: 1a81b2536a643da43e68139ad1134435b389ebc9
+Signer #1 public key MD5 digest: 1838caeafc3a2c311e13d8168d9c92ae
