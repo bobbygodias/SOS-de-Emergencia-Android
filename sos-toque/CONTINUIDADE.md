@@ -1,6 +1,6 @@
 # Continuidade — SOS Toque 1.0.0
 
-Objetivo: Bobby precisa acionar um contato pessoal sem apertar o botão lateral e com a tela completamente apagada. A senha não era o obstáculo. O SOS nativo aparece no bloqueio, mas só depois de acender o aparelho. Dispositivo informado: Doogee S100 Pro, Android 12.
+Objetivo: Bobby precisa acionar um contato pessoal sem apertar o botão lateral e com a tela completamente apagada. A senha não era o obstáculo. O SOS nativo aparece no bloqueio, mas só depois de acender o aparelho. Dispositivo informado para a primeira validação física: Doogee S100 Pro, Android 12. **Escopo do projeto:** aparelhos Android compatíveis, sem exclusividade de modelo, fabricante ou proprietário; o Doogee é referência histórica de testes, não restrição do software.
 
 Decisão técnica: apps comuns não recebem toques capacitivos no painel apagado. Usar cinco ciclos de cobrir e descobrir o sensor de aproximação superior. Não confundir esse gesto com cinco toques no meio da tela. Preferir sensor wake-up; se inexistente, trava parcial de CPU durante serviço ativo, com exceção de otimização de bateria solicitada ao usuário. Não sacudir ou levantar o telefone.
 
