@@ -2,6 +2,8 @@
 
 Repositório de desenvolvimento da Enterprise, de Bobby Dias e Andrew Vox.
 
+**Escopo:** aplicativo aberto destinado a dispositivos Android compatíveis, não exclusivo de um fabricante, modelo ou aparelho pessoal. A versão 1.0.0 exige Android 8.0 (API 26) ou superior; o acionamento com tela apagada requer sensor de proximidade utilizável e permissões de execução em segundo plano. O Doogee S100 Pro aparece nos registros apenas como referência de validação física ainda pendente, e não como público-alvo exclusivo.
+
 O código-fonte recuperado da versão **SOS Toque 1.0.0** está em [`sos-toque/`](sos-toque/). Inclui o aplicativo Java para Android, manifest, recursos, lógica de gestos, documentação, testes e script de compilação. O pacote original foi recuperado sem chave de assinatura ou dados pessoais.
 
 ## Como o acionamento funciona
