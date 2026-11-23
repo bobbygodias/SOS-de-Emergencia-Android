@@ -1,6 +1,8 @@
 # SOS Toque
 
-Aplicativo Android de código aberto para solicitar uma chamada a um contato escolhido sem apertar o botão lateral, destinado a aparelhos Android compatíveis, independentemente de marca ou modelo. Projeto de Bobby Dias e Andrew Vox, Enterprise. Código aberto, licença MIT.
+Aplicativo Android de código aberto para facilitar uma chamada a um contato escolhido, inclusive com a tela apagada e bloqueada, sem precisar pressionar o botão lateral. Voltado a qualquer pessoa que considere esse recurso útil — inclusive pessoas com mobilidade reduzida — e a aparelhos Android compatíveis de diferentes marcas. Projeto de Bobby Dias e Andrew Vox, Enterprise. Licença MIT.
+
+> **Atenção:** projeto em desenvolvimento e ainda sem validação física completa. Não substitui serviços oficiais de emergência, recursos SOS nativos do Android ou outras formas de pedir ajuda. A solicitação de chamada não garante conexão nem atendimento, e o funcionamento do sensor e do serviço pode variar de um dispositivo para outro. Não use como único meio de assistência em emergências.
 
 ## O que o gesto realmente faz
 
@@ -31,7 +33,7 @@ O teste do sensor valida apenas a detecção dos gestos e a abertura do aviso ac
 ## Limites relevantes
 
 - Escopo geral: aparelhos Android compatíveis com Android 8.0 (API 26) ou superior. O modo de tela apagada depende de sensor de proximidade funcional e das condições de funcionamento em segundo plano do aparelho. Não exige root nem substitui o discador padrão.
-- O Doogee S100 Pro / Android 12 foi apenas o aparelho de referência previsto para validação inicial, **não** um requisito, alvo exclusivo nem limite de distribuição. Não houve teste físico nele nesta entrega. Consulte `VALIDACAO.md` para as evidências efetivamente obtidas; cada modelo requer validação prática.
+- A compatibilidade precisa ser confirmada em cada modelo de aparelho. Não houve validação física completa nesta entrega. Consulte `VALIDACAO.md` para as evidências efetivamente obtidas.
 - A qualificação usa tela apagada **e** bloqueada; deixar a tela apagada sem bloqueio não atende esse modo nesta versão.
 - Números curtos e números reconhecidos pelo sistema como emergência usam o discador, com confirmação do Android. O modo automático por sensor exige telefone completo de um contato pessoal. O app não modifica o SOS original do sistema.
 - Solicitar uma chamada ao Android não comprova que ela completou ou foi atendida.
