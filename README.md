@@ -35,7 +35,6 @@ Consulte [a documentação técnica](sos-toque/README.md) e [os critérios de va
 
 ## Código-fonte e desenvolvimento
 
-O código foi recuperado do pacote original `SOS-Toque-1.0.0-fontes.zip`, verificado pelo SHA-256 `df3055555e6227116f29d33a67f1570479228641aaf7f5ca40ce47ddf023242f`. Nenhuma chave de assinatura ou contato pessoal foi importado.
 
 Para compilar, são utilizados Java 17, Android SDK Platform 35, Build Tools 35.0.0 e Eclipse ECJ 3.37.0; veja [as instruções de compilação](sos-toque/README.md). Há também [um documento de continuidade técnica](sos-toque/CONTINUIDADE.md).
 
