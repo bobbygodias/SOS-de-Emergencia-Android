@@ -1,0 +1,7 @@
+/build/
+/local.properties
+*.p12
+*.jks
+*password*
+*.apk
+*.idsig
